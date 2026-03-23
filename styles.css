@@ -962,6 +962,26 @@ main {
   margin-top: 24px;
 }
 
+.home-help {
+  width: min(100%, 980px);
+  opacity: 0;
+  transform: translateY(26px);
+  animation: homeTextIn 1s ease forwards 1.05s;
+}
+
+.home-help .contact-tag {
+  display: inline-flex;
+  margin-bottom: 10px;
+}
+
+.home-help .faq-list {
+  margin-top: 18px;
+}
+
+.home-help .faq-item {
+  background: rgba(250, 244, 232, 0.9);
+}
+
 @keyframes homeLogoIn {
   from {
     opacity: 0;

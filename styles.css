@@ -1,12 +1,12 @@
 :root {
-  --bg: #fffdf5;
-  --surface: #fffefb;
-  --surface-strong: #fdf7eb;
-  --line: #dce8f2;
-  --line-strong: #bfd9f4;
-  --text: #4d8567;
-  --heading: #3f7559;
-  --muted: #6d997f;
+  --bg: #f2f8ef;
+  --surface: #fcfffb;
+  --surface-strong: #edf6ea;
+  --line: #d7e6d6;
+  --line-strong: #b8d8bb;
+  --text: #111111;
+  --heading: #111111;
+  --muted: #363636;
   --accent: #4ca8f5;
   --accent-strong: #278de7;
   --accent-soft: rgba(76, 168, 245, 0.1);
@@ -31,8 +31,8 @@ body {
   margin: 0;
   color: var(--text);
   background:
-    radial-gradient(circle at top right, rgba(255, 229, 168, 0.18), transparent 28%),
-    radial-gradient(circle at bottom left, rgba(191, 217, 244, 0.12), transparent 32%),
+    radial-gradient(circle at top right, rgba(186, 222, 184, 0.2), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(202, 232, 201, 0.18), transparent 32%),
     var(--bg);
   font-family: "Times New Roman", Times, serif;
 }
@@ -43,8 +43,8 @@ body::before {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(216, 232, 248, 0.55) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(216, 232, 248, 0.55) 1px, transparent 1px);
+    linear-gradient(rgba(205, 225, 205, 0.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(205, 225, 205, 0.55) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.6), transparent 90%);
   opacity: 0.22;
@@ -74,9 +74,9 @@ button {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 252, 243, 0.94);
+  background: rgba(245, 250, 243, 0.96);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(216, 232, 248, 0.9);
+  border-bottom: 1px solid rgba(205, 225, 205, 0.9);
 }
 
 .site-header::before {
@@ -94,28 +94,25 @@ button {
 
 .header-inner {
   min-height: var(--header-height);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  justify-self: start;
+  gap: 0;
   color: var(--accent-strong);
   font-weight: 700;
-  font-size: 1.65rem;
+  font-size: 1.85rem;
   letter-spacing: -0.02em;
 }
 
 .brand-mark {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #7dc4ff);
-  box-shadow: 0 0 0 8px rgba(76, 168, 245, 0.08);
+  display: none;
 }
 
 .menu-toggle {
@@ -131,15 +128,17 @@ button {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-self: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 .site-nav a {
-  padding: 10px 14px;
+  padding: 13px 18px;
   border-radius: var(--radius-pill);
   color: var(--heading);
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 1.08rem;
+  font-weight: 600;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
@@ -715,7 +714,7 @@ main {
 .leader-role,
 .contact-tag {
   color: var(--accent-strong);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -975,7 +974,7 @@ main {
   padding: 30px 36px;
   border-radius: 16px;
   border: 1px solid var(--line);
-  background: rgba(255, 254, 249, 0.92);
+  background: rgba(252, 255, 251, 0.94);
   box-shadow: var(--shadow-soft);
   color: var(--heading);
   font-size: clamp(1.3rem, 2.5vw, 1.7rem);
@@ -995,18 +994,19 @@ main {
 
 .home-photo-card {
   margin: 0;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 12px;
-  border: 1px solid rgba(191, 217, 244, 0.95);
-  background: rgba(255, 254, 249, 0.92);
+  border: 1px solid var(--line);
+  background: rgba(252, 255, 251, 0.94);
   box-shadow: var(--shadow);
 }
 
 .home-photo-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #f6fbf3;
 }
 
 .home-cards-section {
@@ -1025,8 +1025,8 @@ main {
   min-height: 236px;
   padding: 32px 36px;
   border-radius: 18px;
-  background: rgba(255, 254, 249, 0.92);
-  border: 1px solid rgba(191, 217, 244, 0.95);
+  background: rgba(252, 255, 251, 0.94);
+  border: 1px solid var(--line);
   box-shadow: 0 28px 54px rgba(63, 96, 129, 0.08);
   backdrop-filter: blur(6px);
 }
@@ -1078,11 +1078,11 @@ main {
 }
 
 .home-help .faq-list {
-  margin-top: 18px;
+  margin-top: 0;
 }
 
 .home-help .faq-item {
-  background: rgba(253, 247, 235, 0.92);
+  background: var(--surface-strong);
 }
 
 @keyframes homeLogoIn {
@@ -1200,6 +1200,7 @@ main {
   }
 
   .header-inner {
+    display: flex;
     flex-wrap: wrap;
     padding: 12px 0;
   }

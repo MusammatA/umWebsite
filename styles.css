@@ -1,12 +1,12 @@
 :root {
-  --bg: #fffaf0;
-  --surface: #fffdf8;
-  --surface-strong: #faf4e8;
+  --bg: #fffdf5;
+  --surface: #fffefb;
+  --surface-strong: #fdf7eb;
   --line: #dce8f2;
   --line-strong: #bfd9f4;
-  --text: #344557;
-  --heading: #283240;
-  --muted: #66768b;
+  --text: #435446;
+  --heading: #304234;
+  --muted: #687a67;
   --accent: #4ca8f5;
   --accent-strong: #278de7;
   --accent-soft: rgba(76, 168, 245, 0.1);
@@ -31,10 +31,10 @@ body {
   margin: 0;
   color: var(--text);
   background:
-    radial-gradient(circle at top right, rgba(255, 222, 140, 0.2), transparent 26%),
-    radial-gradient(circle at bottom left, rgba(191, 217, 244, 0.16), transparent 30%),
+    radial-gradient(circle at top right, rgba(255, 229, 168, 0.18), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(191, 217, 244, 0.12), transparent 32%),
     var(--bg);
-  font-family: "Avenir Next", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 body::before {
@@ -74,7 +74,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 252, 243, 0.94);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(216, 232, 248, 0.9);
 }
@@ -105,9 +105,9 @@ button {
   align-items: center;
   gap: 12px;
   color: var(--accent-strong);
-  font-weight: 800;
-  font-size: 1.8rem;
-  letter-spacing: -0.04em;
+  font-weight: 700;
+  font-size: 1.65rem;
+  letter-spacing: -0.02em;
 }
 
 .brand-mark {
@@ -135,11 +135,11 @@ button {
 }
 
 .site-nav a {
-  padding: 12px 18px;
+  padding: 10px 14px;
   border-radius: var(--radius-pill);
   color: var(--heading);
-  font-size: 1rem;
-  font-weight: 650;
+  font-size: 0.88rem;
+  font-weight: 500;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
@@ -200,7 +200,8 @@ main {
 .contact-title {
   margin: 0;
   color: var(--heading);
-  font-family: "Baskerville", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
 }
 
 .page-hero h1 {
@@ -403,6 +404,7 @@ main {
 .two-column,
 .leadership-grid,
 .contact-grid,
+.community-grid,
 .workshop-grid,
 .archive-grid {
   display: grid;
@@ -414,7 +416,8 @@ main {
 }
 
 .two-column,
-.contact-grid {
+.contact-grid,
+.community-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -536,8 +539,9 @@ main {
 .term-heading h2 {
   margin: 0;
   color: var(--heading);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 2rem;
+  font-weight: 700;
   letter-spacing: -0.03em;
 }
 
@@ -701,8 +705,9 @@ main {
 .year-section h2 {
   margin: 0 0 16px;
   color: var(--heading);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 2.3rem;
+  font-weight: 700;
   letter-spacing: -0.04em;
 }
 
@@ -777,6 +782,29 @@ main {
   margin-top: 18px;
 }
 
+.community-card .card-copy {
+  margin-bottom: 0;
+}
+
+.community-embed {
+  margin-top: 20px;
+  min-height: 460px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.community-embed .instagram-media {
+  margin: 0 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.community-card .button {
+  margin-top: 18px;
+}
+
 .contact-row {
   display: flex;
   align-items: center;
@@ -821,7 +849,7 @@ main {
 
 .site-footer {
   padding: 40px 0 52px;
-  color: #7c8ca4;
+  color: #7b8a78;
   font-size: 0.95rem;
 }
 
@@ -845,17 +873,17 @@ main {
   min-height: calc(100vh - var(--header-height));
   display: grid;
   place-items: center;
-  padding: 44px 0 56px;
+  padding: 24px 0 40px;
   overflow: hidden;
 }
 
 .home-stage::before {
   content: "";
   position: absolute;
-  inset: 8% 10% auto;
-  height: 420px;
-  background: radial-gradient(circle, rgba(76, 168, 245, 0.12), transparent 68%);
-  filter: blur(40px);
+  inset: 10% 12% auto;
+  height: 360px;
+  background: radial-gradient(circle, rgba(76, 168, 245, 0.11), transparent 70%);
+  filter: blur(46px);
   pointer-events: none;
 }
 
@@ -886,42 +914,119 @@ main {
   position: relative;
   z-index: 1;
   display: grid;
+  min-height: calc(100vh - var(--header-height) - 72px);
+  align-content: center;
   justify-items: center;
-  gap: 34px;
+  gap: 28px;
 }
 
 .home-title-stack {
   max-width: 980px;
-  padding-top: 140px;
   text-align: center;
   opacity: 0;
   transform: translateY(26px);
-  animation: homeTextIn 1s ease forwards 0.45s;
+  animation: homeTextIn 1s ease forwards 0.82s;
 }
 
 .home-title {
-  font-size: clamp(3.4rem, 7.5vw, 6.4rem);
-  line-height: 0.96;
-  letter-spacing: -0.06em;
+  font-size: clamp(3.8rem, 8vw, 6.9rem);
+  line-height: 0.93;
+  letter-spacing: -0.03em;
   color: var(--heading);
+  font-weight: 700;
   text-wrap: balance;
 }
 
-.home-panels {
+.scroll-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: rgba(48, 66, 52, 0.88);
+  opacity: 0;
+  transform: translateY(18px);
+  animation: homeTextIn 0.9s ease forwards 1.25s;
+}
+
+.scroll-indicator-line {
+  width: 1px;
+  height: 46px;
+  background: currentColor;
+}
+
+.scroll-indicator-arrow {
+  width: 12px;
+  height: 12px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.home-summary-section {
+  padding-top: 8px;
+}
+
+.home-summary-card {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 30px 36px;
+  border-radius: 28px;
+  border: 1px solid var(--line);
+  background: rgba(255, 254, 249, 0.92);
+  box-shadow: var(--shadow-soft);
+  color: var(--heading);
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.home-gallery-section {
+  padding-top: 34px;
+}
+
+.home-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.8fr));
+  gap: 22px;
+}
+
+.home-photo-card {
+  margin: 0;
+  min-height: 320px;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(191, 217, 244, 0.95);
+  background: rgba(255, 254, 249, 0.92);
+  box-shadow: var(--shadow);
+}
+
+.home-photo-card.featured {
+  min-height: 420px;
+}
+
+.home-photo-card img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-cards-section {
+  padding: 38px 0 56px;
+}
+
+.home-panels {
+  width: min(100%, 980px);
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
-  opacity: 0;
-  transform: translateY(26px);
-  animation: homeTextIn 1s ease forwards 0.8s;
 }
 
 .home-card {
   min-height: 236px;
   padding: 32px 36px;
   border-radius: 32px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 254, 249, 0.92);
   border: 1px solid rgba(191, 217, 244, 0.95);
   box-shadow: 0 28px 54px rgba(63, 96, 129, 0.08);
   backdrop-filter: blur(6px);
@@ -930,9 +1035,10 @@ main {
 .home-card h2 {
   margin: 0;
   color: var(--heading);
-  font-family: "Baskerville", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: clamp(2.6rem, 4vw, 4rem);
   line-height: 1;
+  font-weight: 700;
   letter-spacing: -0.05em;
 }
 
@@ -945,7 +1051,7 @@ main {
 
 .home-card .event-meta {
   margin-top: 18px;
-  color: #94a4bc;
+  color: #7f8f78;
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.7;
@@ -964,9 +1070,7 @@ main {
 
 .home-help {
   width: min(100%, 980px);
-  opacity: 0;
-  transform: translateY(26px);
-  animation: homeTextIn 1s ease forwards 1.05s;
+  margin: 24px auto 0;
 }
 
 .home-help .contact-tag {
@@ -979,7 +1083,7 @@ main {
 }
 
 .home-help .faq-item {
-  background: rgba(250, 244, 232, 0.9);
+  background: rgba(253, 247, 235, 0.92);
 }
 
 @keyframes homeLogoIn {
@@ -1035,11 +1139,17 @@ main {
   .feature-grid,
   .two-column,
   .contact-grid,
+  .community-grid,
   .archive-grid,
   .leadership-grid,
   .workshop-grid,
+  .home-gallery,
   .home-panels {
     grid-template-columns: 1fr;
+  }
+
+  .home-photo-card.featured {
+    min-height: 360px;
   }
 
   .controls-grid {
@@ -1090,12 +1200,12 @@ main {
   }
 
   .home-logo-layer {
-    top: -20px;
+    top: -10px;
     width: min(92vw, 620px);
   }
 
-  .home-title-stack {
-    padding-top: 110px;
+  .home-content {
+    min-height: calc(100vh - var(--header-height) - 52px);
   }
 }
 
@@ -1114,6 +1224,20 @@ main {
 
   .home-title {
     font-size: 3.2rem;
+  }
+
+  .scroll-indicator-line {
+    height: 34px;
+  }
+
+  .home-summary-card {
+    padding: 24px;
+    font-size: 1.18rem;
+  }
+
+  .home-photo-card,
+  .home-photo-card.featured {
+    min-height: 260px;
   }
 
   .home-card {
@@ -1155,6 +1279,10 @@ main {
   .hero-visual,
   .lecture-card {
     padding: 18px;
+  }
+
+  .community-embed {
+    min-height: 380px;
   }
 
   .leader-body {

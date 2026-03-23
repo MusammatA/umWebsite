@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lectures | Columbia Undergraduate Math Society</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+  <script src="lectures-data.js" defer></script>
+  <script src="lectures.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>UMS</span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a class="active" href="lectures.html">Lectures</a>
+        <a href="workshop.html">Proof Writing Workshop</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero compact">
+      <div class="shell">
+        <div data-reveal>
+          <div class="eyebrow">Lecture archive</div>
+          <h1>Search the archive instead of scrolling through everything.</h1>
+          <p class="lead">Filter by year and semester, search by speaker or topic, and open full details only when you need them. This page is designed to grow without becoming confusing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="filter-panel" data-reveal>
+          <div class="controls-grid">
+            <div>
+              <label class="field-label" for="lecture-search">Search lectures</label>
+              <input class="search-field" id="lecture-search" type="search" placeholder="Search title, speaker, topic, year, or semester">
+            </div>
+            <div>
+              <label class="field-label" for="year-filter">Year</label>
+              <select class="field" id="year-filter"></select>
+            </div>
+            <div>
+              <label class="field-label" for="semester-filter">Semester</label>
+              <select class="field" id="semester-filter"></select>
+            </div>
+            <div style="display:flex;align-items:end;">
+              <button class="button-secondary" id="reset-filters" type="button" style="width:100%;">Reset filters</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-summary" data-reveal>
+          <span id="lecture-summary">Loading archive...</span>
+          <span class="microcopy">Minimal at first glance, detailed when expanded.</span>
+        </div>
+
+        <div id="lecture-results"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <span>Lecture archive page</span>
+      <span>Search by title, topic, speaker, year, or semester.</span>
+    </div>
+  </footer>
+</body>
+</html>

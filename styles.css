@@ -4,9 +4,9 @@
   --surface-strong: #fdf7eb;
   --line: #dce8f2;
   --line-strong: #bfd9f4;
-  --text: #435446;
-  --heading: #304234;
-  --muted: #687a67;
+  --text: #22412e;
+  --heading: #163222;
+  --muted: #49644f;
   --accent: #4ca8f5;
   --accent-strong: #278de7;
   --accent-soft: rgba(76, 168, 245, 0.1);
@@ -849,7 +849,7 @@ main {
 
 .site-footer {
   padding: 40px 0 52px;
-  color: #7b8a78;
+  color: #4d6654;
   font-size: 0.95rem;
 }
 
@@ -938,14 +938,17 @@ main {
 }
 
 .scroll-indicator {
+  position: absolute;
+  right: clamp(12px, 2.8vw, 36px);
+  top: 50%;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  color: rgba(48, 66, 52, 0.88);
+  color: rgba(22, 50, 34, 0.92);
   opacity: 0;
-  transform: translateY(18px);
-  animation: homeTextIn 0.9s ease forwards 1.25s;
+  transform: translateY(-50%);
+  animation: homeArrowIn 0.9s ease forwards 1.25s;
 }
 
 .scroll-indicator-line {
@@ -970,7 +973,7 @@ main {
   max-width: 860px;
   margin: 0 auto;
   padding: 30px 36px;
-  border-radius: 28px;
+  border-radius: 16px;
   border: 1px solid var(--line);
   background: rgba(255, 254, 249, 0.92);
   box-shadow: var(--shadow-soft);
@@ -986,22 +989,18 @@ main {
 
 .home-gallery {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 0.8fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
 }
 
 .home-photo-card {
   margin: 0;
-  min-height: 320px;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 16px;
   border: 1px solid rgba(191, 217, 244, 0.95);
   background: rgba(255, 254, 249, 0.92);
   box-shadow: var(--shadow);
-}
-
-.home-photo-card.featured {
-  min-height: 420px;
 }
 
 .home-photo-card img {
@@ -1025,7 +1024,7 @@ main {
 .home-card {
   min-height: 236px;
   padding: 32px 36px;
-  border-radius: 32px;
+  border-radius: 18px;
   background: rgba(255, 254, 249, 0.92);
   border: 1px solid rgba(191, 217, 244, 0.95);
   box-shadow: 0 28px 54px rgba(63, 96, 129, 0.08);
@@ -1051,7 +1050,7 @@ main {
 
 .home-card .event-meta {
   margin-top: 18px;
-  color: #7f8f78;
+  color: #55705c;
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.7;
@@ -1108,6 +1107,17 @@ main {
   }
 }
 
+@keyframes homeArrowIn {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-50% + 18px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
 [data-reveal] {
   opacity: 0;
   transform: translateY(16px);
@@ -1146,10 +1156,6 @@ main {
   .home-gallery,
   .home-panels {
     grid-template-columns: 1fr;
-  }
-
-  .home-photo-card.featured {
-    min-height: 360px;
   }
 
   .controls-grid {
@@ -1207,6 +1213,10 @@ main {
   .home-content {
     min-height: calc(100vh - var(--header-height) - 52px);
   }
+
+  .scroll-indicator {
+    right: 6px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1230,14 +1240,21 @@ main {
     height: 34px;
   }
 
+  .scroll-indicator {
+    top: auto;
+    right: 12px;
+    bottom: 24px;
+    transform: none;
+    animation: homeTextIn 0.9s ease forwards 1.25s;
+  }
+
   .home-summary-card {
     padding: 24px;
     font-size: 1.18rem;
   }
 
-  .home-photo-card,
-  .home-photo-card.featured {
-    min-height: 260px;
+  .home-photo-card {
+    aspect-ratio: 4 / 3;
   }
 
   .home-card {

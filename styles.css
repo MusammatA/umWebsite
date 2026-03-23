@@ -4,9 +4,9 @@
   --surface-strong: #fdf7eb;
   --line: #dce8f2;
   --line-strong: #bfd9f4;
-  --text: #22412e;
-  --heading: #163222;
-  --muted: #49644f;
+  --text: #4d8567;
+  --heading: #3f7559;
+  --muted: #6d997f;
   --accent: #4ca8f5;
   --accent-strong: #278de7;
   --accent-soft: rgba(76, 168, 245, 0.1);
@@ -849,7 +849,7 @@ main {
 
 .site-footer {
   padding: 40px 0 52px;
-  color: #4d6654;
+  color: var(--muted);
   font-size: 0.95rem;
 }
 
@@ -945,7 +945,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  color: rgba(22, 50, 34, 0.92);
+  color: var(--heading);
   opacity: 0;
   transform: translateY(-50%);
   animation: homeArrowIn 0.9s ease forwards 1.25s;
@@ -1050,7 +1050,7 @@ main {
 
 .home-card .event-meta {
   margin-top: 18px;
-  color: #55705c;
+  color: var(--muted);
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.7;

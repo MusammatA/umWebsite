@@ -370,6 +370,67 @@
       line-height: 1.75;
     }
 
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .archive-card {
+      padding: 22px;
+      border: 1px solid var(--line-strong);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow);
+    }
+
+    .archive-label {
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .archive-card h3 {
+      margin: 10px 0 12px;
+      color: var(--heading);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      line-height: 1.25;
+    }
+
+    .archive-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .archive-meta {
+      margin-top: 12px;
+      color: #41536d;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .year-section {
+      padding-top: 28px;
+    }
+
+    .year-title {
+      margin: 0 0 18px;
+      color: var(--heading);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+
+    .leadership-note {
+      margin-top: 22px;
+    }
+
     .workshop-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -520,6 +581,7 @@
 
     @media (max-width: 980px) {
       .hero-panels,
+      .archive-grid,
       .workshop-grid,
       .leadership-grid,
       .contact-grid {
@@ -612,25 +674,33 @@
       <nav class="nav" id="site-nav" aria-label="Primary">
         <a class="nav-link" href="#home">Home</a>
         <div class="nav-group">
-          <button type="button" data-target="#lectures">Lectures <span class="chevron">▼</span></button>
+          <button type="button" data-target="#lectures-overview">Lectures <span class="chevron">▼</span></button>
           <div class="dropdown">
-            <a href="#upcoming">Upcoming Lecture</a>
-            <a href="#lectures">Spring 2023 Events</a>
+            <a href="#lectures-spring-2026">Spring 2026</a>
+            <a href="#lectures-fall-2025">Fall 2025</a>
+            <a href="#lectures-summer-2025">Summer 2025</a>
+            <a href="#lectures-spring-2025">Spring 2025</a>
+            <a href="#lectures-fall-2024">Fall 2024</a>
+            <a href="#lectures-summer-2024">Summer 2024</a>
+            <a href="#lectures-spring-2024">Spring 2024</a>
+            <a href="#lectures-summer-2023">Summer 2023</a>
+            <a href="#lectures-spring-2023">Spring 2023</a>
           </div>
         </div>
         <div class="nav-group">
           <button type="button" data-target="#workshop">Proof Writing Workshop <span class="chevron">▼</span></button>
           <div class="dropdown">
-            <a href="#workshop">Workshop Overview</a>
-            <a href="Proof_Workshop_Handout_Week_1.pdf" download>Week 1 Handout</a>
-            <a href="Proof_Workshop_Handout_Week_5.pdf" download>Week 5 Handout</a>
+            <a href="#workshop-2025">2025</a>
+            <a href="#workshop-2024">2024</a>
+            <a href="#workshop-2023">2023</a>
+            <a href="#workshop-2022">2022</a>
           </div>
         </div>
         <div class="nav-group">
           <button type="button" data-target="#leadership">Leadership <span class="chevron">▼</span></button>
           <div class="dropdown">
-            <a href="#leadership">Current Leaders</a>
-            <a href="#contact">Reach Out</a>
+            <a href="#leadership-2025">2025</a>
+            <a href="#leadership-archive">Previous Leadership</a>
           </div>
         </div>
         <a class="nav-link" href="#contact">Contact</a>
@@ -644,7 +714,7 @@
       <p>Join us for engaging mathematical discussions, learning seminars, and a vibrant community of math enthusiasts.</p>
 
       <div class="hero-panels">
-        <article class="panel" id="upcoming">
+        <article class="panel" id="lectures-spring-2026">
           <h3>TBD</h3>
           <div class="meta">Mar 25, 2026 • 6:30 PM, Math 508 Cantor Lounge</div>
           <a class="speaker-link" href="#leadership">Austin Lei</a>
@@ -654,6 +724,71 @@
           <h3>Join UMS</h3>
           <p>Receive weekly updates about upcoming lectures and events.</p>
           <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScPUMiIM5IjK7KAQM1dWv5fQAtGakaNhSeOn_d8zVEVrtAwPg/viewform" target="_blank" rel="noreferrer">Join Mailing List</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-block" id="lectures-overview">
+      <div class="section-heading">
+        <h2 class="section-title">Lecture Archive</h2>
+        <p class="section-subtitle">The official UMS site organizes lectures by semester and year. This version now mirrors that archive structure so the dropdowns lead to real year sections instead of one-off shortcuts.</p>
+      </div>
+
+      <div class="archive-grid">
+        <article class="archive-card" id="lectures-fall-2025">
+          <div class="archive-label">Fall 2025</div>
+          <h3>Lecture Archive</h3>
+          <p class="archive-copy">The official site includes a Fall 2025 lecture term in the archive navigation. This slot is reserved here so the menu structure matches the real UMS organization.</p>
+          <div class="archive-meta">Use the mailing list for the most current lecture updates while this term page is filled in.</div>
+        </article>
+
+        <article class="archive-card" id="lectures-summer-2025">
+          <div class="archive-label">Summer 2025</div>
+          <h3>Learning Seminar</h3>
+          <p class="archive-copy">The Summer 2025 program is organized as a learning seminar rather than a standard lecture series, continuing the archive-by-term structure from the official UMS site.</p>
+          <div class="archive-meta">Summer seminar listed between Spring 2025 and Fall 2025 in the lecture archive.</div>
+        </article>
+
+        <article class="archive-card" id="lectures-spring-2025">
+          <div class="archive-label">Spring 2025</div>
+          <h3>Lecture Archive</h3>
+          <p class="archive-copy">Spring 2025 appears in the official lecture menu between Fall 2024 and Summer 2025. This section keeps that navigation intact and gives the archive a real landing point.</p>
+          <div class="archive-meta">Semester archive anchor preserved here for year-based browsing.</div>
+        </article>
+
+        <article class="archive-card" id="lectures-fall-2024">
+          <div class="archive-label">Fall 2024</div>
+          <h3>Math Building Lectures</h3>
+          <p class="archive-copy">The Fall 2024 series ran on Wednesdays in Room 520 and included talks on the finite field Kakeya problem, the Langlands program, combinatorics, topology, and student presentations.</p>
+          <div class="archive-meta">Official archive summary: weekly lectures plus an undergraduate talks session and class planning panel.</div>
+        </article>
+
+        <article class="archive-card" id="lectures-summer-2024">
+          <div class="archive-label">Summer 2024</div>
+          <h3>Summer Reading Seminar</h3>
+          <p class="archive-copy">Summer terms on the official UMS site are organized separately from the lecture semesters. This archive slot keeps that same structure and marks the summer seminar branch of the program.</p>
+          <div class="archive-meta">Summer 2024 sits between Spring 2024 and Fall 2024 in the official archive.</div>
+        </article>
+
+        <article class="archive-card" id="lectures-spring-2024">
+          <div class="archive-label">Spring 2024</div>
+          <h3>Spring 2024 Lectures</h3>
+          <p class="archive-copy">The Spring 2024 series featured talks in the Math Building on arithmetic groups and mapping class groups, spinors and twistors, and other accessible topics for undergraduates.</p>
+          <div class="archive-meta">Official archive summary: Wednesdays, 7:30 PM, Room 520 Math Building.</div>
+        </article>
+
+        <article class="archive-card" id="lectures-summer-2023">
+          <div class="archive-label">Summer 2023</div>
+          <h3>Advanced Linear Algebra</h3>
+          <p class="archive-copy">The Summer 2023 UMS page is organized as a learning seminar on advanced linear algebra, with Zoom meetings and weekly speaker signups instead of the usual lecture-card layout.</p>
+          <div class="archive-meta">Official archive summary: Tuesdays, 6:00 PM, on Zoom.</div>
+        </article>
+
+        <article class="archive-card" id="lectures-spring-2023">
+          <div class="archive-label">Spring 2023</div>
+          <h3>Full Event Schedule</h3>
+          <p class="archive-copy">Spring 2023 is the detailed semester shown in your screenshots, with the long event cards and date blocks that define the overall style of the site.</p>
+          <div class="archive-meta">Scroll below for the full Spring 2023 event list.</div>
         </article>
       </div>
     </section>
@@ -756,56 +891,184 @@
         <p class="section-subtitle">If you're taking your first proof-based math course or just want to improve your proof-writing skills, sign up for our Introduction to Proofs workshop!</p>
       </div>
 
-      <div class="workshop-grid">
-        <article class="workshop-card">
-          <div class="week-label">Week 1</div>
-          <h3 class="workshop-title">Direct Proofs</h3>
-          <div class="workshop-meta">
-            <div><strong>Date:</strong>September 12, 2025</div>
-            <div><strong>Time:</strong>1:00 PM - 3:00 PM</div>
-          </div>
-          <a class="button" href="Proof_Workshop_Handout_Week_1.pdf" download>Download Handout</a>
-        </article>
+      <div class="year-section" id="workshop-2025">
+        <h3 class="year-title">2025</h3>
+        <div class="workshop-grid">
+          <article class="workshop-card">
+            <div class="week-label">Week 1</div>
+            <h3 class="workshop-title">Direct Proofs</h3>
+            <div class="workshop-meta">
+              <div><strong>Date:</strong>September 12, 2025</div>
+              <div><strong>Time:</strong>1:00 PM - 3:00 PM</div>
+            </div>
+            <a class="button" href="Proof_Workshop_Handout_Week_1.pdf" download>Download Handout</a>
+          </article>
 
-        <article class="workshop-card">
-          <div class="week-label">Week 2</div>
-          <h3 class="workshop-title">Contradiction and Counterexamples</h3>
-          <div class="workshop-meta">
-            <div><strong>Date:</strong>September 19, 2025</div>
-            <div><strong>Time:</strong>1:00 PM - 3:00 PM</div>
-          </div>
-          <a class="button" href="Proof_Workshop_Handout_Week_2.pdf" download>Download Handout</a>
-        </article>
+          <article class="workshop-card">
+            <div class="week-label">Week 2</div>
+            <h3 class="workshop-title">Contradiction and Counterexamples</h3>
+            <div class="workshop-meta">
+              <div><strong>Date:</strong>September 19, 2025</div>
+              <div><strong>Time:</strong>1:00 PM - 3:00 PM</div>
+            </div>
+            <a class="button" href="Proof_Workshop_Handout_Week_2.pdf" download>Download Handout</a>
+          </article>
 
-        <article class="workshop-card">
-          <div class="week-label">Week 3</div>
-          <h3 class="workshop-title">Proof by Induction</h3>
-          <div class="workshop-meta">
-            <div><strong>Date:</strong>September 26, 2025</div>
-            <div><strong>Time:</strong>1:00 PM - 3:00 PM</div>
-          </div>
-          <a class="button" href="Proof_Workshop_Handout_Week_3-2.pdf" download>Download Handout</a>
-        </article>
+          <article class="workshop-card">
+            <div class="week-label">Week 3</div>
+            <h3 class="workshop-title">Proof by Induction</h3>
+            <div class="workshop-meta">
+              <div><strong>Date:</strong>September 26, 2025</div>
+              <div><strong>Time:</strong>1:00 PM - 3:00 PM</div>
+            </div>
+            <a class="button" href="Proof_Workshop_Handout_Week_3-2.pdf" download>Download Handout</a>
+          </article>
 
-        <article class="workshop-card">
-          <div class="week-label">Week 4</div>
-          <h3 class="workshop-title">Functions: Basic Definitions and Exercises</h3>
-          <div class="workshop-meta">
-            <div><strong>Date:</strong>October 3, 2025</div>
-            <div><strong>Time:</strong>1:00 PM - 3:00 PM</div>
-          </div>
-          <a class="button" href="Proof_Workshop_Handout_Week_4.pdf" download>Download Handout</a>
-        </article>
+          <article class="workshop-card">
+            <div class="week-label">Week 4</div>
+            <h3 class="workshop-title">Functions: Basic Definitions and Exercises</h3>
+            <div class="workshop-meta">
+              <div><strong>Date:</strong>October 3, 2025</div>
+              <div><strong>Time:</strong>1:00 PM - 3:00 PM</div>
+            </div>
+            <a class="button" href="Proof_Workshop_Handout_Week_4.pdf" download>Download Handout</a>
+          </article>
 
-        <article class="workshop-card">
-          <div class="week-label">Week 5</div>
-          <h3 class="workshop-title">Quantifiers, Limits, Epsilon-Delta Proofs</h3>
-          <div class="workshop-meta">
-            <div><strong>Date:</strong>October 10, 2025</div>
-            <div><strong>Time:</strong>1:00 PM - 3:00 PM</div>
-          </div>
-          <a class="button" href="Proof_Workshop_Handout_Week_5.pdf" download>Download Handout</a>
-        </article>
+          <article class="workshop-card">
+            <div class="week-label">Week 5</div>
+            <h3 class="workshop-title">Quantifiers, Limits, Epsilon-Delta Proofs</h3>
+            <div class="workshop-meta">
+              <div><strong>Date:</strong>October 10, 2025</div>
+              <div><strong>Time:</strong>1:00 PM - 3:00 PM</div>
+            </div>
+            <a class="button" href="Proof_Workshop_Handout_Week_5.pdf" download>Download Handout</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="year-section" id="workshop-2024">
+        <h3 class="year-title">2024</h3>
+        <div class="workshop-grid">
+          <article class="workshop-card">
+            <div class="week-label">Week 1</div>
+            <h3 class="workshop-title">Week 1 Archive Handout</h3>
+            <div class="workshop-meta">
+              <div><strong>Series:</strong>2024 Proof Writing Workshop</div>
+              <div><strong>File:</strong>UMSProofsWeek1_2024.pdf</div>
+            </div>
+            <a class="button" href="UMSProofsWeek1_2024.pdf" download>Download Handout</a>
+          </article>
+
+          <article class="workshop-card">
+            <div class="week-label">Week 2</div>
+            <h3 class="workshop-title">Week 2 Archive Handout</h3>
+            <div class="workshop-meta">
+              <div><strong>Series:</strong>2024 Proof Writing Workshop</div>
+              <div><strong>File:</strong>UMSProofsWeek2_2024.pdf</div>
+            </div>
+            <a class="button" href="UMSProofsWeek2_2024.pdf" download>Download Handout</a>
+          </article>
+
+          <article class="workshop-card">
+            <div class="week-label">Week 3</div>
+            <h3 class="workshop-title">Week 3 Archive Handout</h3>
+            <div class="workshop-meta">
+              <div><strong>Series:</strong>2024 Proof Writing Workshop</div>
+              <div><strong>File:</strong>UMSProofsWeek3_2024.pdf</div>
+            </div>
+            <a class="button" href="UMSProofsWeek3_2024.pdf" download>Download Handout</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="year-section" id="workshop-2023">
+        <h3 class="year-title">2023</h3>
+        <div class="workshop-grid">
+          <article class="workshop-card">
+            <div class="week-label">Week 1</div>
+            <h3 class="workshop-title">Week 1 Archive Handout</h3>
+            <div class="workshop-meta">
+              <div><strong>Series:</strong>2023 Proof Writing Workshop</div>
+              <div><strong>File:</strong>UMSProofsWeek1_2023.pdf</div>
+            </div>
+            <a class="button" href="UMSProofsWeek1_2023.pdf" download>Download Handout</a>
+          </article>
+
+          <article class="workshop-card">
+            <div class="week-label">Week 2</div>
+            <h3 class="workshop-title">Week 2 Archive Handout</h3>
+            <div class="workshop-meta">
+              <div><strong>Series:</strong>2023 Proof Writing Workshop</div>
+              <div><strong>File:</strong>UMSProofsWeek2_2023.pdf</div>
+            </div>
+            <a class="button" href="UMSProofsWeek2_2023.pdf" download>Download Handout</a>
+          </article>
+
+          <article class="workshop-card">
+            <div class="week-label">Week 3</div>
+            <h3 class="workshop-title">Week 3 Archive Handout</h3>
+            <div class="workshop-meta">
+              <div><strong>Series:</strong>2023 Proof Writing Workshop</div>
+              <div><strong>File:</strong>UMSProofsWeek3_2023.pdf</div>
+            </div>
+            <a class="button" href="UMSProofsWeek3_2023.pdf" download>Download Handout</a>
+          </article>
+
+          <article class="workshop-card">
+            <div class="week-label">Week 4</div>
+            <h3 class="workshop-title">Week 4 Archive Handout</h3>
+            <div class="workshop-meta">
+              <div><strong>Series:</strong>2023 Proof Writing Workshop</div>
+              <div><strong>File:</strong>UMSProofsWeek4_2023.pdf</div>
+            </div>
+            <a class="button" href="UMSProofsWeek4_2023.pdf" download>Download Handout</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="year-section" id="workshop-2022">
+        <h3 class="year-title">2022</h3>
+        <div class="workshop-grid">
+          <article class="workshop-card">
+            <div class="week-label">Week 1</div>
+            <h3 class="workshop-title">Week 1 Archive Handout</h3>
+            <div class="workshop-meta">
+              <div><strong>Series:</strong>2022 Proof Writing Workshop</div>
+              <div><strong>File:</strong>UMSProofsWeek1_2022.pdf</div>
+            </div>
+            <a class="button" href="UMSProofsWeek1_2022.pdf" download>Download Handout</a>
+          </article>
+
+          <article class="workshop-card">
+            <div class="week-label">Week 2</div>
+            <h3 class="workshop-title">Week 2 Archive Handout</h3>
+            <div class="workshop-meta">
+              <div><strong>Series:</strong>2022 Proof Writing Workshop</div>
+              <div><strong>File:</strong>UMSProofsWeek2_2022.pdf</div>
+            </div>
+            <a class="button" href="UMSProofsWeek2_2022.pdf" download>Download Handout</a>
+          </article>
+
+          <article class="workshop-card">
+            <div class="week-label">Week 3</div>
+            <h3 class="workshop-title">Week 3 Archive Handout</h3>
+            <div class="workshop-meta">
+              <div><strong>Series:</strong>2022 Proof Writing Workshop</div>
+              <div><strong>File:</strong>UMSProofsWeek3_2022.pdf</div>
+            </div>
+            <a class="button" href="UMSProofsWeek3_2022.pdf" download>Download Handout</a>
+          </article>
+
+          <article class="workshop-card">
+            <div class="week-label">Week 4</div>
+            <h3 class="workshop-title">Week 4 Archive Handout</h3>
+            <div class="workshop-meta">
+              <div><strong>Series:</strong>2022 Proof Writing Workshop</div>
+              <div><strong>File:</strong>UMSProofsWeek4_2022.pdf</div>
+            </div>
+            <a class="button" href="UMSProofsWeek4_2022.pdf" download>Download Handout</a>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -815,7 +1078,7 @@
         <p class="section-subtitle">Current UMS leaders from the photos you provided, presented in the same clean card layout as the rest of the page.</p>
       </div>
 
-      <div class="leadership-grid">
+      <div class="leadership-grid" id="leadership-2025">
         <article class="leader-card">
           <img class="leader-image upper-crop" src="joseph.jpeg" alt="Joseph McGill">
           <div class="leader-body">
@@ -870,6 +1133,11 @@
           </div>
         </article>
       </div>
+
+      <article class="contact-card leadership-note" id="leadership-archive">
+        <h3>Previous Leadership</h3>
+        <p>The official UMS site separates the current leadership page from a previous leadership archive. This page now keeps that structure in place, with the current 2025 team above and room below for older cohorts when their profiles are added.</p>
+      </article>
     </section>
 
     <section class="section section-block" id="contact">

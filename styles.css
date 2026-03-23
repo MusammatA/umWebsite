@@ -989,7 +989,7 @@ main {
 
 .home-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 
@@ -997,7 +997,7 @@ main {
   margin: 0;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 12px;
   border: 1px solid rgba(191, 217, 244, 0.95);
   background: rgba(255, 254, 249, 0.92);
   box-shadow: var(--shadow);
@@ -1153,9 +1153,12 @@ main {
   .archive-grid,
   .leadership-grid,
   .workshop-grid,
-  .home-gallery,
   .home-panels {
     grid-template-columns: 1fr;
+  }
+
+  .home-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .controls-grid {
@@ -1251,6 +1254,10 @@ main {
   .home-summary-card {
     padding: 24px;
     font-size: 1.18rem;
+  }
+
+  .home-gallery {
+    grid-template-columns: 1fr;
   }
 
   .home-photo-card {

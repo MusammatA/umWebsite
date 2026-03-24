@@ -1,7 +1,7 @@
 :root {
-  --bg: #f2f8ef;
-  --surface: #fcfffb;
-  --surface-strong: #edf6ea;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-strong: #e0ecd9;
   --line: #d7e6d6;
   --line-strong: #b8d8bb;
   --text: #111111;
@@ -32,10 +32,7 @@ html {
 body {
   margin: 0;
   color: var(--text);
-  background:
-    radial-gradient(circle at top right, rgba(186, 222, 184, 0.2), transparent 28%),
-    radial-gradient(circle at bottom left, rgba(202, 232, 201, 0.18), transparent 32%),
-    var(--bg);
+  background: var(--bg);
   font-family: "Times New Roman", Times, serif;
 }
 
@@ -76,7 +73,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(245, 250, 243, 0.96);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(205, 225, 205, 0.9);
 }
@@ -428,7 +425,7 @@ main {
 }
 
 .contact-links-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .leadership-grid {
@@ -701,11 +698,12 @@ main {
 }
 
 .year-nav a {
-  padding: 10px 14px;
+  padding: 16px 28px;
   border-radius: 999px;
-  background: var(--surface-strong);
+  background: #d2e3ca;
+  border: 1px solid #bdd2b4;
   color: var(--heading);
-  font-size: 0.92rem;
+  font-size: 1.05rem;
   font-weight: 700;
 }
 
@@ -868,6 +866,12 @@ main {
   padding: 16px 18px;
   border-radius: 16px;
   background: var(--surface-strong);
+}
+
+.contact-row .button {
+  flex: 0 0 auto;
+  min-width: 170px;
+  white-space: nowrap;
 }
 
 .contact-row strong {
@@ -1063,7 +1067,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: #f6fbf3;
+  background: #ffffff;
 }
 
 .home-cards-section {

@@ -12,10 +12,10 @@
   --accent-soft: rgba(76, 168, 245, 0.1);
   --button-fill: #83987d;
   --button-fill-strong: #71866c;
-  --shadow: 0 20px 44px rgba(52, 98, 145, 0.08);
-  --shadow-soft: 0 10px 24px rgba(52, 98, 145, 0.06);
-  --radius: 22px;
-  --radius-sm: 14px;
+  --shadow: 0 18px 40px rgba(44, 72, 58, 0.08);
+  --shadow-soft: 0 10px 22px rgba(44, 72, 58, 0.05);
+  --radius: 18px;
+  --radius-sm: 12px;
   --radius-pill: 999px;
   --container: 1120px;
   --header-height: 78px;
@@ -46,7 +46,7 @@ body::before {
     linear-gradient(90deg, rgba(205, 225, 205, 0.55) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.6), transparent 90%);
-  opacity: 0.22;
+  opacity: 0.16;
 }
 
 a {
@@ -75,7 +75,7 @@ button {
   z-index: 50;
   background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(205, 225, 205, 0.9);
+  border-bottom: 1px solid rgba(205, 225, 205, 0.82);
 }
 
 .site-header::before {
@@ -137,10 +137,10 @@ button {
 }
 
 .site-nav a {
-  padding: 13px 18px;
+  padding: 12px 18px;
   border-radius: var(--radius-pill);
   color: var(--heading);
-  font-size: 1.12rem;
+  font-size: 1.05rem;
   font-weight: 600;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
@@ -161,11 +161,11 @@ main {
 }
 
 .page-hero {
-  padding: 84px 0 34px;
+  padding: 88px 0 32px;
 }
 
 .page-hero.compact {
-  padding-bottom: 18px;
+  padding-bottom: 14px;
 }
 
 .hero-grid {
@@ -207,10 +207,10 @@ main {
 }
 
 .page-hero h1 {
-  margin-top: 14px;
-  font-size: clamp(3rem, 7vw, 5.4rem);
-  line-height: 0.94;
-  letter-spacing: -0.05em;
+  margin-top: 8px;
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  line-height: 0.97;
+  letter-spacing: -0.045em;
 }
 
 .lead {
@@ -379,7 +379,7 @@ main {
 }
 
 .section {
-  padding: 26px 0 0;
+  padding: 34px 0 0;
 }
 
 .section-head {
@@ -409,8 +409,12 @@ main {
 .section-copy {
   max-width: 700px;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.page-hero .section-copy {
+  margin-top: 14px;
 }
 
 .feature-grid,
@@ -455,14 +459,14 @@ main {
 .contact-card,
 .workshop-card,
 .card {
-  padding: 24px;
+  padding: 26px;
 }
 
 .card-title,
 .contact-title {
-  font-size: 2rem;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-size: 1.8rem;
+  line-height: 1.12;
+  letter-spacing: -0.028em;
 }
 
 .card-copy {
@@ -571,7 +575,7 @@ main {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
   gap: 22px;
-  padding: 20px;
+  padding: 22px;
   overflow: hidden;
 }
 
@@ -627,9 +631,9 @@ main {
 }
 
 .lecture-title {
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
-  line-height: 1.1;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+  line-height: 1.14;
+  letter-spacing: -0.032em;
 }
 
 .lecture-subtitle {
@@ -703,8 +707,8 @@ main {
 .year-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: 28px;
 }
 
 .year-nav a {
@@ -715,6 +719,7 @@ main {
   color: var(--heading);
   font-size: 1.05rem;
   font-weight: 700;
+  box-shadow: var(--shadow-soft);
 }
 
 .year-section {
@@ -731,9 +736,9 @@ main {
   margin: 0 0 22px;
   color: var(--heading);
   font-family: "Times New Roman", Times, serif;
-  font-size: 2.3rem;
+  font-size: 2.15rem;
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
 }
 
 .workshop-card .year-tag,
@@ -748,9 +753,9 @@ main {
 
 .workshop-title {
   margin-top: 10px;
-  font-size: 2rem;
-  line-height: 1.15;
-  letter-spacing: -0.04em;
+  font-size: 1.7rem;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
 }
 
 .workshop-meta {
@@ -790,9 +795,9 @@ main {
 }
 
 .leader-name {
-  font-size: 1.9rem;
-  line-height: 1.1;
-  letter-spacing: -0.04em;
+  font-size: 1.65rem;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
 }
 
 .leader-copy {
@@ -820,7 +825,7 @@ main {
 
 .history-year {
   color: var(--heading);
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 700;
   line-height: 1;
 }
@@ -926,19 +931,20 @@ main {
 }
 
 .site-footer {
-  padding: 40px 0 52px;
+  padding: 44px 0 52px;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.96rem;
 }
 
 .footer-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 18px;
   flex-wrap: wrap;
   border-top: 1px solid var(--line);
-  padding-top: 18px;
+  padding-top: 20px;
+  text-align: center;
 }
 
 .inline-link {
@@ -1054,7 +1060,7 @@ main {
   padding: 30px 36px;
   border-radius: 16px;
   border: 1px solid var(--line);
-  background: rgba(252, 255, 251, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow-soft);
   color: var(--heading);
   font-size: clamp(1.05rem, 1.7vw, 1.32rem);
@@ -1078,7 +1084,7 @@ main {
   overflow: hidden;
   border-radius: 12px;
   border: 1px solid var(--line);
-  background: rgba(252, 255, 251, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow);
 }
 
@@ -1105,7 +1111,7 @@ main {
   min-height: 236px;
   padding: 32px 36px;
   border-radius: 18px;
-  background: rgba(252, 255, 251, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid var(--line);
   box-shadow: 0 28px 54px rgba(63, 96, 129, 0.08);
   backdrop-filter: blur(6px);

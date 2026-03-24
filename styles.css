@@ -1109,10 +1109,10 @@ main {
   margin: 0;
   color: var(--heading);
   font-family: "Times New Roman", Times, serif;
-  font-size: clamp(2.6rem, 4vw, 4rem);
+  font-size: clamp(1.95rem, 3vw, 2.8rem);
   line-height: 1;
   font-weight: 700;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
 }
 
 .home-card p {
@@ -1149,6 +1149,7 @@ main {
 .home-help .contact-tag {
   display: inline-flex;
   margin-bottom: 10px;
+  font-size: 0.84rem;
 }
 
 .home-help .faq-list {

@@ -10,6 +10,8 @@
   --accent: #4ca8f5;
   --accent-strong: #278de7;
   --accent-soft: rgba(76, 168, 245, 0.1);
+  --button-fill: #83987d;
+  --button-fill-strong: #71866c;
   --shadow: 0 20px 44px rgba(52, 98, 145, 0.08);
   --shadow-soft: 0 10px 24px rgba(52, 98, 145, 0.06);
   --radius: 22px;
@@ -103,6 +105,7 @@ button {
 .brand {
   display: inline-flex;
   align-items: center;
+  grid-column: 1;
   justify-self: start;
   gap: 0;
   color: var(--accent-strong);
@@ -117,6 +120,8 @@ button {
 
 .menu-toggle {
   display: none;
+  grid-column: 3;
+  justify-self: end;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--surface);
@@ -126,6 +131,7 @@ button {
 }
 
 .site-nav {
+  grid-column: 2;
   display: flex;
   align-items: center;
   justify-self: center;
@@ -137,7 +143,7 @@ button {
   padding: 13px 18px;
   border-radius: var(--radius-pill);
   color: var(--heading);
-  font-size: 1.08rem;
+  font-size: 1.12rem;
   font-weight: 600;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
@@ -241,33 +247,34 @@ main {
 
 .button {
   border: 0;
-  background: linear-gradient(135deg, var(--accent), #5eb4fb);
+  background: linear-gradient(135deg, var(--button-fill), #93a88d);
   color: #ffffff;
-  box-shadow: 0 16px 28px rgba(76, 168, 245, 0.18);
+  box-shadow: 0 16px 28px rgba(113, 134, 108, 0.22);
 }
 
 .button:hover {
   transform: translateY(-1px);
-  background: linear-gradient(135deg, var(--accent-strong), #3ba1f4);
+  background: linear-gradient(135deg, var(--button-fill-strong), #7f9279);
 }
 
 .button-secondary {
-  border: 1px solid var(--line-strong);
-  background: #ffffff;
-  color: var(--heading);
+  border: 1px solid var(--button-fill);
+  background: var(--button-fill);
+  color: #ffffff;
 }
 
 .button-secondary:hover,
 .button-ghost:hover {
   transform: translateY(-1px);
-  border-color: var(--accent);
-  color: var(--accent-strong);
+  border-color: var(--button-fill-strong);
+  background: var(--button-fill-strong);
+  color: #ffffff;
 }
 
 .button-ghost {
-  border: 1px dashed var(--line-strong);
-  background: transparent;
-  color: var(--muted);
+  border: 1px solid var(--button-fill);
+  background: var(--button-fill);
+  color: #ffffff;
 }
 
 .hero-visual,
@@ -418,6 +425,10 @@ main {
 .contact-grid,
 .community-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-links-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .leadership-grid {
@@ -637,17 +648,18 @@ main {
 }
 
 .lecture-toggle {
-  border: 1px solid var(--line);
-  background: #ffffff;
-  color: var(--heading);
+  border: 1px solid var(--button-fill);
+  background: var(--button-fill);
+  color: #ffffff;
   padding: 10px 14px;
   border-radius: 12px;
   font-weight: 700;
 }
 
 .lecture-toggle:hover {
-  border-color: var(--accent);
-  color: var(--accent-strong);
+  border-color: var(--button-fill-strong);
+  background: var(--button-fill-strong);
+  color: #ffffff;
 }
 
 .lecture-detail {
@@ -773,6 +785,50 @@ main {
   margin-top: 12px;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.leadership-history-section {
+  margin-top: 24px;
+}
+
+.previous-leadership-grid {
+  margin-top: 20px;
+}
+
+.history-card {
+  display: grid;
+  gap: 16px;
+  min-height: 0;
+}
+
+.history-year {
+  color: var(--heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.history-list {
+  display: grid;
+  gap: 14px;
+}
+
+.history-row {
+  display: grid;
+  gap: 6px;
+}
+
+.history-row strong {
+  color: var(--accent-strong);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.history-row span {
+  color: var(--heading);
+  line-height: 1.6;
 }
 
 .contact-stack {
@@ -969,8 +1025,9 @@ main {
 }
 
 .home-summary-card {
-  max-width: 860px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   padding: 30px 36px;
   border-radius: 16px;
   border: 1px solid var(--line);
@@ -979,7 +1036,7 @@ main {
   color: var(--heading);
   font-size: clamp(1.3rem, 2.5vw, 1.7rem);
   line-height: 1.6;
-  text-align: center;
+  text-align: left;
 }
 
 .home-gallery-section {
@@ -1014,10 +1071,10 @@ main {
 }
 
 .home-panels {
-  width: min(100%, 980px);
+  width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
@@ -1068,7 +1125,7 @@ main {
 }
 
 .home-help {
-  width: min(100%, 980px);
+  width: 100%;
   margin: 24px auto 0;
 }
 

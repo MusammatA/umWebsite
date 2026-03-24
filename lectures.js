@@ -284,7 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <h3 class="lecture-title">${escapeHtml(entry.title)}</h3>
                 <div class="lecture-subtitle">${escapeHtml(entry.speaker)}</div>
-                <p class="lecture-blurb">${escapeHtml(entry.blurb)}</p>
                 <div class="lecture-actions">
                   <button class="lecture-toggle" type="button" data-toggle-detail aria-expanded="false">Read more</button>
                   <span class="microcopy">${escapeHtml(entry.semester)} ${escapeHtml(entry.year)}</span>

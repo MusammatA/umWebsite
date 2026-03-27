@@ -68,9 +68,10 @@ button {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.99);
+  background: rgba(8, 41, 79, 0.98);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 28px rgba(8, 31, 61, 0.2);
 }
 
 .site-header::before {
@@ -96,11 +97,11 @@ button {
   gap: 4px;
   grid-column: 1;
   justify-self: start;
-  color: var(--heading);
+  color: #ffffff;
 }
 
 .brand-name {
-  color: var(--heading);
+  color: #ffffff;
   font-family: var(--display-font);
   font-size: 1.8rem;
   font-weight: 700;
@@ -111,10 +112,10 @@ button {
   display: none;
   grid-column: 2;
   justify-self: end;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--surface);
-  color: var(--heading);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
   padding: 10px 14px;
   font-family: var(--ui-font);
   font-weight: 600;
@@ -135,7 +136,7 @@ button {
   padding: 6px 0 10px;
   border-radius: 0;
   border-bottom: 3px solid transparent;
-  color: var(--heading);
+  color: rgba(255, 255, 255, 0.92);
   font-family: var(--ui-font);
   font-size: 0.98rem;
   font-weight: 600;
@@ -147,7 +148,7 @@ button {
 .site-nav a:hover,
 .site-nav a.active {
   background: transparent;
-  color: var(--accent-strong);
+  color: #ffffff;
   border-bottom-color: var(--accent);
 }
 
@@ -238,7 +239,7 @@ main {
   gap: 10px;
   min-height: 48px;
   padding: 0 20px;
-  border-radius: 0;
+  border-radius: 14px;
   font-family: var(--ui-font);
   font-weight: 700;
   letter-spacing: 0.04em;

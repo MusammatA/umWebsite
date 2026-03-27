@@ -18,7 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (yearDiff !== 0) {
       return yearDiff;
     }
-    return (semesterOrder[b.semester] || 0) - (semesterOrder[a.semester] || 0);
+
+    const semesterDiff = (semesterOrder[b.semester] || 0) - (semesterOrder[a.semester] || 0);
+    if (semesterDiff !== 0) {
+      return semesterDiff;
+    }
+
+    return new Date(b.date) - new Date(a.date);
   });
 
   const years = [...new Set(archive.map((entry) => entry.year))].sort((a, b) => Number(b) - Number(a));

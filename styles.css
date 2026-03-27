@@ -4,14 +4,15 @@
   --surface-strong: #eef3f8;
   --line: #c8d5e3;
   --line-strong: #9fb5cb;
-  --text: #1d2430;
-  --heading: #0a2e5c;
-  --muted: #49576a;
-  --accent: #6ea6d7;
-  --accent-strong: #184f90;
-  --accent-soft: rgba(110, 166, 215, 0.14);
-  --button-fill: #184f90;
-  --button-fill-strong: #103d6f;
+  --text: #2a3340;
+  --heading: #08294f;
+  --muted: #667487;
+  --accent: #8db9df;
+  --accent-strong: #3f77ac;
+  --accent-soft: rgba(141, 185, 223, 0.16);
+  --button-fill: #9fc5e7;
+  --button-fill-strong: #7fb0dc;
+  --button-text: #08294f;
   --shadow: 0 18px 40px rgba(16, 45, 84, 0.09);
   --shadow-soft: 0 10px 22px rgba(16, 45, 84, 0.06);
   --radius: 18px;
@@ -207,18 +208,18 @@ main {
 
 .page-hero h1 {
   margin-top: 8px;
-  font-size: clamp(2.6rem, 5.5vw, 4.25rem);
-  line-height: 1.02;
-  letter-spacing: 0.03em;
+  font-size: clamp(2.9rem, 5.9vw, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: 0.045em;
   font-variant: small-caps;
 }
 
 .lead {
   max-width: 720px;
   margin-top: 20px;
-  color: var(--muted);
-  font-size: 1.15rem;
-  line-height: 1.7;
+  color: var(--text);
+  font-size: 1.08rem;
+  line-height: 1.82;
 }
 
 .hero-actions {
@@ -246,35 +247,35 @@ main {
 }
 
 .button {
-  border: 0;
-  background: linear-gradient(180deg, #2c6db0, var(--button-fill));
-  color: #ffffff;
-  box-shadow: 0 14px 28px rgba(24, 79, 144, 0.18);
+  border: 1px solid #88b8df;
+  background: linear-gradient(180deg, #d3e5f5, var(--button-fill));
+  color: var(--button-text);
+  box-shadow: 0 12px 24px rgba(110, 166, 215, 0.2);
 }
 
 .button:hover {
   transform: translateY(-1px);
-  background: linear-gradient(180deg, #275f9a, var(--button-fill-strong));
+  background: linear-gradient(180deg, #c1daf0, var(--button-fill-strong));
 }
 
 .button-secondary {
   border: 1px solid var(--button-fill);
-  background: var(--button-fill);
-  color: #ffffff;
+  background: #eef5fb;
+  color: var(--button-text);
 }
 
 .button-secondary:hover,
 .button-ghost:hover {
   transform: translateY(-1px);
   border-color: var(--button-fill-strong);
-  background: var(--button-fill-strong);
-  color: #ffffff;
+  background: #dfecf8;
+  color: var(--button-text);
 }
 
 .button-ghost {
   border: 1px solid var(--button-fill);
-  background: var(--button-fill);
-  color: #ffffff;
+  background: #f5f9fd;
+  color: var(--button-text);
 }
 
 .hero-visual,
@@ -397,9 +398,9 @@ main {
 }
 
 .section-title {
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-size: clamp(2.45rem, 4.4vw, 3.9rem);
   line-height: 1.05;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   font-variant: small-caps;
 }
 
@@ -407,19 +408,19 @@ main {
   margin: 0 0 20px;
   color: var(--heading);
   font-family: var(--display-font);
-  font-size: clamp(1.7rem, 2.6vw, 2.35rem);
-  line-height: 1.05;
+  font-size: clamp(1.85rem, 2.9vw, 2.6rem);
+  line-height: 1.08;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.035em;
   font-variant: small-caps;
 }
 
 .section-copy {
   max-width: 700px;
-  color: var(--muted);
-  font-family: var(--ui-font);
-  font-size: 1.02rem;
-  line-height: 1.75;
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 0.98rem;
+  line-height: 1.84;
 }
 
 .page-hero .section-copy {
@@ -660,8 +661,10 @@ main {
   margin-top: 10px;
   color: var(--accent-strong);
   font-family: var(--ui-font);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .lecture-blurb {
@@ -681,8 +684,8 @@ main {
 
 .lecture-toggle {
   border: 1px solid var(--button-fill);
-  background: var(--button-fill);
-  color: #ffffff;
+  background: linear-gradient(180deg, #d3e5f5, var(--button-fill));
+  color: var(--button-text);
   padding: 10px 14px;
   border-radius: 0;
   font-family: var(--ui-font);
@@ -693,8 +696,8 @@ main {
 
 .lecture-toggle:hover {
   border-color: var(--button-fill-strong);
-  background: var(--button-fill-strong);
-  color: #ffffff;
+  background: linear-gradient(180deg, #c1daf0, var(--button-fill-strong));
+  color: var(--button-text);
 }
 
 .lecture-detail {
@@ -715,8 +718,9 @@ main {
 
 .lecture-detail p {
   margin: 0;
-  color: var(--muted);
-  line-height: 1.8;
+  color: var(--text);
+  font-family: var(--body-font);
+  line-height: 1.84;
 }
 
 .empty-state {
@@ -831,9 +835,9 @@ main {
 
 .leader-copy {
   margin-top: 12px;
-  color: var(--muted);
-  font-family: var(--ui-font);
-  line-height: 1.7;
+  color: var(--text);
+  font-family: var(--body-font);
+  line-height: 1.82;
 }
 
 .leadership-history-section {
@@ -1046,9 +1050,9 @@ main {
 
 .home-title {
   font-family: var(--display-font);
-  font-size: clamp(3.4rem, 7vw, 6rem);
+  font-size: clamp(3.8rem, 7.4vw, 6.6rem);
   line-height: 0.98;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.045em;
   color: var(--heading);
   font-weight: 700;
   text-wrap: balance;
@@ -1096,10 +1100,10 @@ main {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow-soft);
-  color: var(--heading);
-  font-family: var(--ui-font);
-  font-size: clamp(1.05rem, 1.7vw, 1.32rem);
-  line-height: 1.6;
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: clamp(1rem, 1.55vw, 1.18rem);
+  line-height: 1.82;
   text-align: left;
 }
 
@@ -1156,19 +1160,19 @@ main {
   margin: 0;
   color: var(--heading);
   font-family: var(--display-font);
-  font-size: clamp(1.95rem, 3vw, 2.8rem);
+  font-size: clamp(1.85rem, 2.7vw, 2.5rem);
   line-height: 1.04;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   font-variant: small-caps;
 }
 
 .home-card p {
   margin: 18px 0 0;
-  color: var(--muted);
-  font-family: var(--ui-font);
-  font-size: 1.18rem;
-  line-height: 1.7;
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 1.04rem;
+  line-height: 1.82;
 }
 
 .home-card .event-meta {

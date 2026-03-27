@@ -127,15 +127,6 @@ button {
   color: var(--heading);
 }
 
-.brand-kicker {
-  color: var(--accent-strong);
-  font-family: var(--ui-font);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
 .brand-name {
   color: var(--heading);
   font-family: var(--display-font);

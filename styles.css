@@ -18,7 +18,7 @@
   --radius-sm: 12px;
   --radius-pill: 999px;
   --container: 1120px;
-  --header-height: 132px;
+  --header-height: 92px;
   --display-font: "Trajan Pro 3", "Times New Roman", Georgia, serif;
   --body-font: "Adobe Garamond Pro", Garamond, Baskerville, Georgia, serif;
   --ui-font: "Proxima Nova", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
@@ -76,42 +76,13 @@ button {
   display: none;
 }
 
-.columbia-strip {
-  background: var(--heading);
-  color: #ffffff;
-  border-top: 4px solid #8c6f45;
-}
-
-.columbia-strip-inner {
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-}
-
-.columbia-home {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #ffffff;
-  font-family: var(--ui-font);
-  font-size: 0.98rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: none;
-}
-
-.columbia-crown {
-  font-size: 1.05rem;
-  line-height: 1;
-}
-
 .shell {
   width: min(calc(100% - 32px), var(--container));
   margin: 0 auto;
 }
 
 .header-inner {
-  min-height: calc(var(--header-height) - 40px);
+  min-height: var(--header-height);
   display: grid;
   grid-template-columns: minmax(260px, 1fr) auto;
   align-items: center;

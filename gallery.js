@@ -2,7 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const statusCard = document.querySelector("#gallery-status");
   const galleryRoot = document.querySelector("#gallery-root");
 
-  if (!statusCard || !galleryRoot) {
+  if (!galleryRoot) {
+    return;
+  }
+
+  if (galleryRoot.querySelector(".gallery-year-section")) {
     return;
   }
 
@@ -92,6 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderMessage(title, body, buttonHref) {
+    if (!statusCard) {
+      return;
+    }
     statusCard.innerHTML = `
       <h2 class="contact-title">${escapeHtml(title)}</h2>
       <p class="card-copy">${escapeHtml(body)}</p>

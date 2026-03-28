@@ -919,6 +919,132 @@ main {
   margin-top: 18px;
 }
 
+.gallery-status-card {
+  margin-bottom: 30px;
+}
+
+.gallery-year-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.gallery-year-nav a {
+  padding: 14px 24px;
+  border-radius: 14px;
+  background: #edf3f9;
+  border: 1px solid var(--line);
+  color: var(--accent-strong);
+  font-family: var(--ui-font);
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-soft);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.gallery-year-section + .gallery-year-section {
+  margin-top: 70px;
+  padding-top: 34px;
+  border-top: 2px solid var(--line);
+}
+
+.gallery-year-section h2 {
+  margin: 0 0 22px;
+  color: var(--heading);
+  font-family: var(--display-font);
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  font-variant: small-caps;
+}
+
+.gallery-media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.gallery-card {
+  overflow: hidden;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.gallery-media-link {
+  display: block;
+}
+
+.gallery-media-frame {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fbfe, #edf3f9);
+}
+
+.gallery-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--muted);
+  font-family: var(--ui-font);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.gallery-type-pill {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(8, 41, 79, 0.88);
+  color: #ffffff;
+  font-family: var(--ui-font);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.gallery-card-body {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.gallery-meta {
+  color: var(--accent-strong);
+  font-family: var(--ui-font);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.gallery-caption {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--body-font);
+  line-height: 1.76;
+}
+
+.gallery-card .button {
+  width: 100%;
+}
+
 .contact-row {
   display: flex;
   align-items: center;
@@ -1279,6 +1405,7 @@ main {
   .two-column,
   .contact-grid,
   .community-grid,
+  .gallery-media-grid,
   .archive-grid,
   .leadership-grid,
   .workshop-grid,

@@ -13,15 +13,9 @@ function mediaTypeLabel(type) {
   return labels[type] || "Post";
 }
 
-async function fetchAllMedia(userId, accessToken, apiVersion) {
+async function fetchPagedMedia(initialUrl) {
   const items = [];
   let pageCount = 0;
-
-  const initialUrl = new URL(`https://graph.facebook.com/${apiVersion}/${userId}/media`);
-  initialUrl.searchParams.set("fields", "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp");
-  initialUrl.searchParams.set("limit", String(PAGE_LIMIT));
-  initialUrl.searchParams.set("access_token", accessToken);
-
   let nextUrl = initialUrl.toString();
 
   while (nextUrl && pageCount < MAX_PAGES) {
@@ -44,6 +38,22 @@ async function fetchAllMedia(userId, accessToken, apiVersion) {
   return items;
 }
 
+async function fetchAllMediaWithFacebookLogin(userId, accessToken, apiVersion) {
+  const initialUrl = new URL(`https://graph.facebook.com/${apiVersion}/${userId}/media`);
+  initialUrl.searchParams.set("fields", "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp");
+  initialUrl.searchParams.set("limit", String(PAGE_LIMIT));
+  initialUrl.searchParams.set("access_token", accessToken);
+  return fetchPagedMedia(initialUrl);
+}
+
+async function fetchAllMediaWithInstagramLogin(accessToken, apiVersion) {
+  const initialUrl = new URL(`https://graph.instagram.com/${apiVersion}/me/media`);
+  initialUrl.searchParams.set("fields", "id,caption,media_type,media_url,permalink,thumbnail_url,timestamp");
+  initialUrl.searchParams.set("limit", String(PAGE_LIMIT));
+  initialUrl.searchParams.set("access_token", accessToken);
+  return fetchPagedMedia(initialUrl);
+}
+
 module.exports = async function handler(req, res) {
   const profile = process.env.INSTAGRAM_PROFILE_URL || DEFAULT_PROFILE_URL;
   const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
@@ -53,17 +63,19 @@ module.exports = async function handler(req, res) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate=86400");
 
-  if (!accessToken || !userId) {
+  if (!accessToken) {
     res.status(200).json({
       configured: false,
       profile,
-      message: "Add INSTAGRAM_USER_ID and INSTAGRAM_ACCESS_TOKEN in Vercel to enable automatic Instagram gallery updates."
+      message: "Add INSTAGRAM_ACCESS_TOKEN in Vercel to enable automatic Instagram gallery updates. INSTAGRAM_USER_ID is optional if you use Instagram Login."
     });
     return;
   }
 
   try {
-    const media = await fetchAllMedia(userId, accessToken, apiVersion);
+    const media = userId
+      ? await fetchAllMediaWithFacebookLogin(userId, accessToken, apiVersion)
+      : await fetchAllMediaWithInstagramLogin(accessToken, apiVersion);
     const normalized = media
       .filter((item) => item?.permalink && item?.timestamp)
       .map((item) => ({

@@ -37,9 +37,10 @@ Main files:
 Instagram gallery setup:
 
 - The site includes `api/instagram-feed.js` for automatic Instagram syncing on Vercel.
-- To turn it on, add these environment variables in Vercel:
-  - `INSTAGRAM_USER_ID`
+- To turn it on with Instagram Login, add:
   - `INSTAGRAM_ACCESS_TOKEN`
+- Optional:
+  - `INSTAGRAM_USER_ID` if you are using the Facebook Login / Page-connected route instead
 - Optional:
   - `INSTAGRAM_API_VERSION`
   - `INSTAGRAM_PROFILE_URL`

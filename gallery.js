@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!payload.configured) {
         renderMessage(
           "Instagram connection not finished yet",
-          payload.message || "The gallery page is ready, but the Instagram API credentials still need to be added in Vercel.",
+          payload.message || "The gallery page is ready, but the Instagram API token still needs to be added in Vercel.",
           payload.profile || "https://www.instagram.com/columbia.ums/"
         );
         return;
